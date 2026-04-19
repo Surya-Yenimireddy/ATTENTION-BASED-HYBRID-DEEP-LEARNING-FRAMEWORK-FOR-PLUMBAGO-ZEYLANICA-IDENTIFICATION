@@ -15,7 +15,7 @@
 
 👉 **[Try it on HuggingFace Spaces](https://huggingface.co/spaces/surya098/plumbago)**
 
-![Plumbago App Demo](screenshots/demo.png)
+![Plumbago App Demo](demo.png)
 
 ---
 
@@ -48,16 +48,45 @@ This project builds a **hybrid deep learning model** to classify plant leaf imag
 
 ## 📊 Model Performance
 
-| Metric    | Training Set | Notes |
-|-----------|-------------|-------|
-| Accuracy  | 100%        | Evaluated on training dataset |
-| Precision | 100%        | Binary classification task |
-| Recall    | 100%        | Plumbago vs Not Plumbago |
-| F1 Score  | 100%        | Small custom dataset |
+| Metric    | Training Set | Notes                          |
+|-----------|-------------|-------------------------------|
+| Accuracy  | 100%        | Evaluated on training dataset  |
+| Precision | 100%        | Binary classification task     |
+| Recall    | 100%        | Plumbago vs Not Plumbago       |
+| F1 Score  | 100%        | Custom dataset of ~5,500 images|
+
+### 📂 Dataset Summary
+
+| Property | Details |
+|----------|---------|
+| Total Images | ~5,500 |
+| Total Classes | 2 (Plumbago / Not Plumbago) |
+| Preprocessing | Leaf segmentation applied |
+| Source | Custom collected dataset |
+
+### 🌿 Class Breakdown
+
+**Class 1 — Plumbago**
+- Plumbago plant leaf images
+
+**Class 2 — Not Plumbago** *(7 different plant species)*
+
+| # | Plant Name | Condition |
+|---|-----------|-----------|
+| 1 | Alstonia Scholaris | Healthy |
+| 2 | Arjun | Healthy |
+| 3 | Bael | Diseased |
+| 4 | Basil | Healthy |
+| 5 | Chinar | Healthy |
+| 6 | Gauva | Healthy |
+| 7 | Jamun | Diseased |
+
+> 🔍 Including both **healthy and diseased** varieties of different plants makes the model more robust and reduces false positives.
+
 
 > ⚠️ **Note:** Metrics are evaluated on the training dataset.
-> Real-world performance on unseen images may vary.
-> A live demo is available on [HuggingFace Spaces](https://huggingface.co/spaces/surya098/plumbago).
+> Real-world performance on **unseen images may vary**.
+> Try the live demo on [HuggingFace Spaces](https://huggingface.co/spaces/surya098/plumbago) to test with your own images.
 
 ---
 
@@ -67,10 +96,10 @@ This project builds a **hybrid deep learning model** to classify plant leaf imag
 plumbago/
 ├── hybrid-deep-learning-framework-for-plumbago.ipynb
 ├── requirements.txt
-├── screenshots/
-│   ├── demo.png           ← Main app screenshot
-│   ├── result.png         ← Prediction result screenshot
-│   └── heatmap.png        ← Heatmap/saliency map screenshot
+├── LICENSE
+├── demo.png
+├── result.png
+├── heatmap.png
 └── README.md
 ```
 
@@ -140,14 +169,14 @@ pip install -r requirements.txt
 
 ## 📊 Output
 
-![Prediction Result](screenshots/result.png)
+![Prediction Result](result.png)
 
 After uploading a leaf image, you will see:
 - ✅ **Prediction:** Plumbago / Not Plumbago
 - 📈 **Confidence Score** (e.g., 94.3%)
 - 🗺️ **Heatmap Explanation** — shows which leaf area influenced the decision
 
-![Heatmap Explanation](screenshots/heatmap.png)
+![Heatmap Explanation](heatmap.png)
 
 ---
 
